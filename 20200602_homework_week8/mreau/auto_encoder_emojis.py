@@ -143,7 +143,7 @@ def saveimage(im, name="reconstruction"):
     im = im.permute(0,2,3,1)
     im_reshaped = im.flatten(start_dim=0, end_dim=1)
     im_col = im_reshaped.numpy()*255
-    imageio.imsave("{}.png".format(name), im_col)
+    imageio.imsave("output/{}.png".format(name), im_col)
 
 for i in [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]:
     latent, pixel = test_interpolate(im_c,im_d,i)
